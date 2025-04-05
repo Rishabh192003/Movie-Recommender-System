@@ -16,14 +16,11 @@ import gdown
 
 # Download similarity.pkl
 if not os.path.exists("similarity.pkl"):
-    url = "https://drive.google.com/file/d/10FObpameldApISrc0qRmnyLJX2Bwi58O/view?usp=sharing"
-    gdown.download(url, "similarity.pkl", quiet=False, fuzzy=True)
+    gdown.download(id="10FObpameldApISrc0qRmnyLJX2Bwi58O", output="similarity.pkl", quiet=False)
 
 # Download movie_dic.pkl
 if not os.path.exists("movie_dic.pkl"):
-    url_dict = "https://drive.google.com/file/d/1JnEhykE8sAz27novrX1ILp2-mX-MWYck/view?usp=sharing"
-    gdown.download(url_dict, "movie_dic.pkl", quiet=False, fuzzy=True)
-
+    gdown.download(id="1JnEhykE8sAz27novrX1ILp2-mX-MWYck", output="movie_dic.pkl", quiet=False)
 # if not os.path.exists("similarity.pkl"):
 #     gdown.download_file_from_google_drive(file_id="10FObpameldApISrc0qRmnyLJX2Bwi58O", output="similarity.pkl", quiet=False)
 
