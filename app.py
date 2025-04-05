@@ -6,12 +6,19 @@ import os
 import gdown
 
 # Only download if not already downloaded
+# if not os.path.exists("similarity.pkl"):
+#     url = "https://drive.google.com/uc?export=download&id=10FObpameldApISrc0qRmnyLJX2Bwi58O"
+#     gdown.download(url, "similarity.pkl", quiet=False)
+# if not os.path.exists("movie_dic.pkl"):
+#     url_dict = "https://drive.google.com/uc?export=download&id=1JnEhykE8sAz27novrX1ILp2-mX-MWYck"
+#     gdown.download(url_dict, "movie_dic.pkl", quiet=False)
+
 if not os.path.exists("similarity.pkl"):
-    url = "https://drive.google.com/uc?export=download&id=10FObpameldApISrc0qRmnyLJX2Bwi58O"
-    gdown.download(url, "similarity.pkl", quiet=False)
+    gdown.download_file_from_google_drive(file_id="10FObpameldApISrc0qRmnyLJX2Bwi58O", output="similarity.pkl", quiet=False)
+
 if not os.path.exists("movie_dic.pkl"):
-    url_dict = "https://drive.google.com/uc?export=download&id=1JnEhykE8sAz27novrX1ILp2-mX-MWYck"
-    gdown.download(url_dict, "movie_dic.pkl", quiet=False)
+    gdown.download_file_from_google_drive(file_id="1JnEhykE8sAz27novrX1ILp2-mX-MWYck", output="movie_dic.pkl", quiet=False)
+    
 
 def Fetch_poster(movie_id):
     response=requests.get('https://api.themoviedb.org/3/movie/{}?api_key=6a4b81aa5b5fb5929a57be811ac2d284'.format(movie_id))
